@@ -39,7 +39,7 @@ export function Connect() {
       <div className="absolute z-50 inset-0 flex flex-col items-center justify-center text-white font-bold px-4 pointer-events-none text-center">
         <div className="mb-4">
         <p className="text-l md:text-3xl md:mb-4">Interested in Collaborating with me?</p>
-        <p className="text-xs md:text-xl">Click the Button below, I'll be waiting for your email</p>
+        <p className="text-xs md:text-xl">Click the Button below, Ill be waiting for your email</p>
         </div>
         <Button>Copy Email Address <MdOutlineContentCopy className="ml-2 h-4 w-4" /> </Button>
       </div>
