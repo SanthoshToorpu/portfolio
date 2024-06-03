@@ -397,33 +397,64 @@ export function GitGlobe() {
   ];
 
   return (
-    <div className="flex flex-row items-center justify-center md:pt-20 h-[30rem] md:h-[40rem] dark:bg-black bg-white relative w-full">
-      <div className="max-w-7xl mx-auto w-full relative overflow-hidden h-[20rem] md:h-[35rem]">
-        <motion.div
-          initial={{
-            opacity: 0,
-            y: 20,
-          }}
-          animate={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            duration: 1,
-          }}
-          className="div"
-        >
-          <h2 className="text-center text-xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text animate-text">
+    <div className="flex flex-row items-center justify-center py-10 md:pt-20 md:h-[40rem] dark:bg-black bg-white relative w-full">
+  <div className="max-w-7xl mx-auto w-full relative overflow-hidden md:h-[35rem]">
+
+    {/* Display this content for mobile interfaces */}
+    <div className="block md:hidden">
+      <motion.div
+        initial={{
+          opacity: 0,
+          y: 20,
+        }}
+        animate={{
+          opacity: 1,
+          y: 0,
+        }}
+        transition={{
+          duration: 1,
+        }}
+        className="div"
+      >
+        <h2 className="text-center text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text animate-text">
           Crafting a mosaic of commits and code
-          </h2>
-          <p className="text-center text-base md:text-lg font-normal text-neutral-700 dark:text-neutral-200 max-w-md mt-2 mx-auto">
+        </h2>
+        <p className="text-center text-base font-normal text-neutral-700 dark:text-neutral-200 max-w-md mt-2 mx-auto">
           Exploring the endless possibilities, iterating, learning, and evolving with each line of code.
-          </p>
-        </motion.div>
-        <div className="absolute w-full pt-8 -bottom-30 h-72 md:h-full z-10 hidden md:block">
-          <World data={sampleArcs} globeConfig={globeConfig} />;
-        </div>
+        </p>
+      </motion.div>
+    </div>
+
+    {/* Display this content for screen sizes greater than md */}
+    <div className="hidden md:block">
+      <motion.div
+        initial={{
+          opacity: 0,
+          y: 20,
+        }}
+        animate={{
+          opacity: 1,
+          y: 0,
+        }}
+        transition={{
+          duration: 1,
+        }}
+        className="div"
+      >
+        <h2 className="text-center text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text animate-text">
+          Crafting a mosaic of commits and code
+        </h2>
+        <p className="text-center text-lg font-normal text-neutral-700 dark:text-neutral-200 max-w-md mt-2 mx-auto">
+          Exploring the endless possibilities, iterating, learning, and evolving with each line of code.
+        </p>
+      </motion.div>
+      <div className="absolute w-full pt-8 -bottom-30 h-72 md:h-full z-10">
+        <World data={sampleArcs} globeConfig={globeConfig} />
       </div>
     </div>
+
+  </div>
+</div>
+
   );
 }

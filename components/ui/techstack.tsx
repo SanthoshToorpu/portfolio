@@ -32,7 +32,7 @@ const TechIcons: React.FC = () => {
       {technologies.map((tech) => (
         <motion.div 
           key={tech.name} 
-          className="flex flex-col items-center justify-center rounded-full h-24 bg-gradient-to-br from-gray-200 to-gray-300 text-gray-800" // Use lighter gradient background
+          className="flex flex-col items-center justify-center h-[55px] w-[55px] sm:h-auto sm:w-auto" // Use lighter gradient background
           whileHover={{ scale: 1.1 }} // Scale up on hover
           whileTap={{ scale: 0.9 }} // Scale down on tap
           transition={{ type: 'spring', stiffness: 200 }} // Smooth spring transition
@@ -40,13 +40,13 @@ const TechIcons: React.FC = () => {
           <motion.img 
             src={tech.icon} 
             alt={tech.name} 
-            style={{ maxWidth: '50px', maxHeight: '50px', borderRadius: '50%' }} // Make icon outline spherical
+            style={{ maxWidth: '50px', maxHeight: '50px' }} // Make icon outline spherical
             initial={{ scale: 0 }} // Initial scale for entrance animation
             animate={{ scale: 1 }} // Scale up on entrance
             transition={{ duration: 0.5, delay: 0.2 }} // Smooth entrance transition
           />  
           <motion.p 
-            className="text-sm font-medium mt-1" 
+            className="hidden md:block text-sm font-medium mt-1" 
             initial={{ opacity: 0 }} // Initial opacity for entrance animation
             animate={{ opacity: 1 }} // Fade in on entrance
             transition={{ duration: 0.5, delay: 0.3 }} // Smooth entrance transition
